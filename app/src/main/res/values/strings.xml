@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Pratki</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tracking_title">Tracking</string>
+    <string name="track_number_hint_text">Enter tracking number</string>
+    <string name="new_parcel">New parcel</string>
+    <string name="save_tracking_number">Save</string>
+    <string name="save_button">SAVE</string>
+    <string name="save_alert_dialog">SAVE</string>
+    <string name="track_amp_trace"><![CDATA[Track & Trace]]></string>
+    <string name="track_button_text">Track</string>
+    <string name="search_by_name_city_postal_code">Search by name, city, postal code</string>
+    <string name="google_maps_api_key">AIzaSyCQZNCMwW7_-dAOD7B5i2sRuMnd-vTXAM0</string>
+    <string name="my_shipments_title">My shipments</string>
+    <string name="profile_title">Profile</string>
+    <string name="no_information_found_for_this_track_number">No information found about this shipment</string>
+    <string name="no_trNr_added">No tracking number added</string>
+    <string name="get_started">Get Started</string>
+    <string name="we_are_here_to_help_you_to_get_the_better_shipping_service_to_track_your_first_package_press_button">We are here to help you to get the better shipping service To track youre first package press button</string>
+    <string name="welcome_to_pratki">Welcome to Pratki</string>
+
+</resources>

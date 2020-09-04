@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_item_search"
+        android:title="Track"
+        android:icon="@drawable/ic_search_icon_gray"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/menu_item_archive"
+        android:title="Archive"
+        android:icon="@drawable/ic_archive_icon_gray"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/menu_item_post"
+        android:title="Post Locations"
+        android:icon="@drawable/ic_post_locations_icon_gray"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/menu_item_location"
+        android:title="Profile"
+        android:icon="@drawable/ic_account_icon_gray"
+        app:showAsAction="always"/>
+
+</menu>
