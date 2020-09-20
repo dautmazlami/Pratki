@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map"
+        tools:context=".fragment.PostLocationFragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_centerInParent="true"/>
+
+    <EditText
+        android:id="@+id/google_map_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edit_text"
+        android:hint="@string/search_by_name_city_postal_code"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:autofillHints=""
+        android:inputType="text"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:imeOptions="actionSearch"/>
+
+    <ImageButton
+        android:id="@+id/icon_my_location"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/google_map_search"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_location_icon_black"
+        android:background="@drawable/rounded_layout_2"
+        android:padding="15dp"/>
+
+</RelativeLayout>
+
+
+
+
+

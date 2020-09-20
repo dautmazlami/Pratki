@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import daut.mazlami.pratki.R;
+import daut.mazlami.pratki.fragment.PostLocationsFragment;
 import daut.mazlami.pratki.fragment.ProfileFragment;
 import daut.mazlami.pratki.fragment.MyDeliveriesFragment;
 import daut.mazlami.pratki.fragment.PostLocationFragment;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 ft.commit();
                 return true;
             case R.id.menu_item_post:
-                ft.replace(R.id.frame_layout, PostLocationFragment.newInstance(new Bundle()), PostLocationFragment.TAG);
+                ft.replace(R.id.frame_layout, PostLocationsFragment.newInstance(new Bundle()), PostLocationsFragment.TAG);
                 ft.commit();
                 return true;
             case R.id.menu_item_location:

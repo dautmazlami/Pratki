@@ -130,8 +130,9 @@ public class PostLocationFragment extends Fragment implements OnMapReadyCallback
 
         requestPermissions();
         getDeviceLocation();
-        addMarkersFromJson();
+        addMarkersFromApi();
         initMap();
+        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
 
         return view;
     }
@@ -160,7 +161,7 @@ public class PostLocationFragment extends Fragment implements OnMapReadyCallback
             mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.setMyLocationEnabled(true);
             mMap.getUiSettings().setMyLocationButtonEnabled(false);
-            addMarkersFromJson();
+            addMarkersFromApi();
             init();
         }
 
@@ -307,7 +308,7 @@ public class PostLocationFragment extends Fragment implements OnMapReadyCallback
 
                         }else {
                             Log.d(TAG,"OnComplete: current location is null");
-                            Toast.makeText(getContext(), "could find location", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "couldn't find location", Toast.LENGTH_SHORT).show();
                             buildAlertMessageNoGps();
                         }
                     }
@@ -412,7 +413,7 @@ public class PostLocationFragment extends Fragment implements OnMapReadyCallback
         }
     }
 
-   /* private void addMarkersFromApi(){
+   private void addMarkersFromApi(){
         Request request = new Request.Builder().url(url).build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -428,7 +429,6 @@ public class PostLocationFragment extends Fragment implements OnMapReadyCallback
 
             @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-                final List<PostLocation> list = new ArrayList<>();
                 String jsonString = response.body().string();
                 Type listType = new TypeToken<List<PostLocation>>(){}.getType();
                 List<PostLocation> postLocations = gson.fromJson(jsonString,listType);
@@ -443,12 +443,12 @@ public class PostLocationFragment extends Fragment implements OnMapReadyCallback
                             MarkerOptions marker = new MarkerOptions();
 
                             if (finalI == 0){
-                                CameraPosition cameraPosition = new CameraPosition(new LatLng(Double.parseDouble(locationList.get(finalI).getLongitude())
-                                        ,Double.parseDouble(locationList.get(finalI).getLatitude())),DEFAULT_ZOOM,TILT_LEVEL,BEARING_LEVEL);
+                                CameraPosition cameraPosition = new CameraPosition(new LatLng(Double.parseDouble(String.valueOf(locationList.get(finalI).getLongitude()))
+                                        ,Double.parseDouble(String.valueOf(locationList.get(finalI).getLatitude()))),DEFAULT_ZOOM,TILT_LEVEL,BEARING_LEVEL);
                                 mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                             }
                             mMap.addMarker(new MarkerOptions()
-                                    .position(new LatLng(Double.parseDouble(locationList.get(finalI).getLatitude()),Double.parseDouble(locationList.get(finalI).getLongitude())))
+                                    .position(new LatLng(Double.parseDouble(String.valueOf(locationList.get(finalI).getLatitude())),Double.parseDouble(String.valueOf(locationList.get(finalI).getLongitude()))))
                                     .title(locationList.get(finalI).getName())
                                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
                             mMap.addMarker(marker);
@@ -466,6 +466,6 @@ public class PostLocationFragment extends Fragment implements OnMapReadyCallback
 
             }
         });
-    }*/
+    }
 
 }

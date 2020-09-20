@@ -21,6 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 android:textColor="@color/text_color_black"
                 tools:text="TEST"
                 android:layout_marginTop="20dp"
@@ -34,7 +35,8 @@
                 tools:text="RT123456789MK"
                 android:textSize="16sp"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/text_color_gray"/>
 
         </LinearLayout>
 
