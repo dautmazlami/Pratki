@@ -283,13 +283,15 @@ public class PostLocationsFragment extends Fragment implements OnMapReadyCallbac
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
-                Toast.makeText(getContext(), "Connection Failed", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+                e.getMessage();
+
             }
 
             @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                 String jsonString = response.body().string();
-                Type listType = new TypeToken<List<PostLocation>>(){}.getType();
+                 Type listType = new TypeToken<List<PostLocation>>(){}.getType();
                 List<PostLocation> postLocations = gson.fromJson(jsonString,listType);
 
                 if (postLocations != null){
